@@ -51,8 +51,10 @@ const TodoForm = ({addTodo, editTodo}) => {
         if(todo.title.trim() === '') {
             tempErrors.title = 'title must not be empty';
         }
-        if(todo.status_id.trim() === '') {
-            tempErrors.status_id = 'status must not be empty';
+        if(todo.status_id != 0){
+            if(todo.status_id.trim() === '') {
+                tempErrors.status_id = 'status must not be empty';
+            }
         }
         if(Object.keys(tempErrors).length > 0 ) {
             setErrors(tempErrors);
